@@ -41,7 +41,11 @@ export class Document extends Component {
     pdf(this.container)
       .toBlob()
       .then(blob => {
-        this.embed.src = URL.createObjectURL(blob);
+        if (navigator.msSaveOrOpenBlob) {
+          navigator.msSaveOrOpenBlob(blob, 'print.pdf');
+        } else {
+          this.embed.href = URL.createObjectURL(blob);
+        }
       });
   }
 
