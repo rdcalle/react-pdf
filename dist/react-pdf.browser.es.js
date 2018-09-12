@@ -4492,7 +4492,8 @@ var Document$$1 = function (_Component) {
         height = _props.height,
         width = _props.width,
         children = _props.children,
-        props = _objectWithoutProperties(_props, ['height', 'width', 'children']);
+        filename = _props.filename,
+        props = _objectWithoutProperties(_props, ['height', 'width', 'children', 'filename']);
 
     PDFRenderer.updateContainer(React.createElement(
       Document$1,
@@ -4502,7 +4503,7 @@ var Document$$1 = function (_Component) {
 
     pdf(this.container).toBlob().then(function (blob) {
       if (navigator.msSaveOrOpenBlob) {
-        navigator.msSaveOrOpenBlob(blob, 'print.pdf');
+        navigator.msSaveOrOpenBlob(blob, filename || 'print.pdf');
       } else {
         _this2.embed.href = URL.createObjectURL(blob);
       }

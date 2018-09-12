@@ -30,7 +30,7 @@ export class Document extends Component {
     this.mountNode = PDFRenderer.createContainer(this.container);
 
     // Omit some props
-    const { height, width, children, ...props } = this.props;
+    const { height, width, children, filename, ...props } = this.props;
 
     PDFRenderer.updateContainer(
       <Container {...props}>{this.props.children}</Container>,
@@ -42,7 +42,7 @@ export class Document extends Component {
       .toBlob()
       .then(blob => {
         if (navigator.msSaveOrOpenBlob) {
-          navigator.msSaveOrOpenBlob(blob, 'print.pdf');
+          navigator.msSaveOrOpenBlob(blob, filename || 'print.pdf');
         } else {
           this.embed.href = URL.createObjectURL(blob);
         }
