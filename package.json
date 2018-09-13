@@ -1,6 +1,6 @@
 {
   "name": "react-pdf-hk",
-  "version": "1.0.0",
+  "version": "1.0.2",
   "license": "MIT",
   "author": "Diego Muracciole <diegomuracciole@gmail.com>",
   "homepage": "https://github.com/diegomura/react-pdf#readme",
@@ -50,7 +50,7 @@
     "media-engine": "^1.0.3",
     "react": "16.4.2",
     "react-reconciler": "^0.7.0",
-    "yoga-layout": "1.9.3"
+    "yoga-layout": "^1.9.3"
   },
   "devDependencies": {
     "babel-cli": "^6.22.2",
