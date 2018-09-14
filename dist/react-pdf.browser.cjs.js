@@ -4513,7 +4513,7 @@ var Document$$1 = function (_Component) {
       if (navigator.msSaveOrOpenBlob) {
         navigator.msSaveOrOpenBlob(blob, filename || 'print.pdf');
       } else {
-        _this2.embed.href = URL.createObjectURL(blob);
+        _this2.embed.src = URL.createObjectURL(blob);
       }
     });
   };

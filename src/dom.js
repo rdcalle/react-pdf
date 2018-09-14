@@ -44,7 +44,7 @@ export class Document extends Component {
         if (navigator.msSaveOrOpenBlob) {
           navigator.msSaveOrOpenBlob(blob, filename || 'print.pdf');
         } else {
-          this.embed.href = URL.createObjectURL(blob);
+          this.embed.src = URL.createObjectURL(blob);
         }
       });
   }
